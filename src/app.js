@@ -8,6 +8,7 @@ import { resolve } from 'path';
 import express from 'express';
 import cors from 'cors';
 //import helmet from 'helmet';
+//teste
 
 import homeRoutes from './routes/homeRoutes';
 import userRoutes from './routes/userRoutes';
