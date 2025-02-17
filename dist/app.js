@@ -15,6 +15,7 @@ var _userRoutes = require('./routes/userRoutes'); var _userRoutes2 = _interopReq
 var _tokenRoutes = require('./routes/tokenRoutes'); var _tokenRoutes2 = _interopRequireDefault(_tokenRoutes);
 var _alunoRoutes = require('./routes/alunoRoutes'); var _alunoRoutes2 = _interopRequireDefault(_alunoRoutes);
 var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopRequireDefault(_fotoRoutes);
+var _expressdelay = require('express-delay'); var _expressdelay2 = _interopRequireDefault(_expressdelay);
 
 const whiteList = ['http://localhost:3000', 'http://35.198.22.191:82'];
 
@@ -38,6 +39,7 @@ class App {
   middlewares() {
     this.app.use(_cors2.default.call(void 0, corsOptions));
     //this.app.use(helmet());
+    this.app.use(_expressdelay2.default.call(void 0, 2000));
     this.app.use(_express2.default.urlencoded({ extended: true }));
     this.app.use(_express2.default.json());
     this.app.use(_express2.default.static(_path.resolve.call(void 0, __dirname, '..', 'uploads')));
